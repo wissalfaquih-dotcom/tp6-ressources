@@ -1,7 +1,4 @@
-"""Pont entre l'API et le paquet sentiment_app.
-
-Aucune manipulation de sys.path : l'API importe le paquet comme n'importe quelle dépendance.
-"""
+"l'API importe le paquet proprement"
 
 from sentiment_app.predict import charger_modele, predire
 
