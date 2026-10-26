@@ -1,0 +1,9 @@
+# Étape à ajouter dans le job de .github/workflows/ci.yml, après l'installation
+# des dépendances. Elle vérifie que la roue fonctionne hors du dépôt.
+      - name: Roue installée hors du dépôt (TP6)
+        run: |
+          pip install build
+          python -m build --wheel
+          python -m venv "$RUNNER_TEMP/roue"
+          "$RUNNER_TEMP/roue/bin/pip" install dist/*.whl
+          "$RUNNER_TEMP/roue/bin/sentiment" --version

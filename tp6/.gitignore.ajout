@@ -1,0 +1,4 @@
+# À ajouter au .gitignore au TP6
+dist/
+build/
+*.egg-info/

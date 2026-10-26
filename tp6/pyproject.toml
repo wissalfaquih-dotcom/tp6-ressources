@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentiment-app"
+version = "0.6.0"
+description = "Analyse de sentiment d'avis en français (projet TP1 à TP6)"
+requires-python = ">=3.11"
+dependencies = [
+    "scikit-learn>=1.4",
+    "joblib>=1.3",
+    "pandas>=2.0",
+    "click>=8.1",
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+]
+
+[project.scripts]
+sentiment = "sentiment_app.cli:main"
+
+# La roue contient le paquet, l'API et l'interface. Ni tests, ni données, ni modèle.
+[tool.setuptools.packages.find]
+include = ["sentiment_app*", "api*", "ui*"]
